@@ -1,0 +1,51 @@
+.header {
+  min-height: 100vh;
+  position: relative;
+  background-image: url('../img/potential.jpg');
+  background-size: cover;
+  background-position: 50% 80%;
+  &__overlay {
+    z-index: 1;
+    @include abs-position;
+    opacity: 0.4;
+    &-extra {
+      &::before {
+        @include abs-position;
+        content: "";
+        background-color: $color-secondary-2-4;
+        clip-path: polygon(0 0, 100% 0, 100% 20%, 0% 100%);
+      }
+      &::after {
+        @include abs-position;
+        content: "";
+        background-color: $color-secondary-2-4;
+        clip-path: polygon(100% 80%, 0% 100%, 100% 100%);
+      }
+    }
+    &::after {
+      @include abs-position;
+      content: "";
+      background-color: $color-primary-0;
+      clip-path: polygon(100% 20%, 100% 20%, 100% 80%, 0% 100%);
+    }
+  }
+  &__title {
+    margin: 0;
+    padding: 55px 118px;
+    font-family: $font-header;
+    font-size: 7rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: $color-light;
+    &-bold {
+      font-weight: 900;
+      font-size: 10rem;
+    }
+  }
+}
+
+body {
+  height: 300vh;
+}
+

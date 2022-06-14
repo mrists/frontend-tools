@@ -1,0 +1,50 @@
+
+.frontend {
+    min-height: 100vh;
+    background-image: url('../img/fe-logo.png');
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__overlay {
+        @include abs-position;
+        background: linear-gradient(135deg, rgba($color-light, 0.4) 50%, rgba($color-secondary-1-1, 0.4) 100%);
+    }
+    &__title {
+        font-family: $font-header;
+        text-transform: uppercase;
+        color: $color-secondary-2-4;
+        font-size: 4rem;
+        font-weight: 300;
+        margin: 0 0 0.4em 0;
+        text-align: center;
+        letter-spacing: 0.1em;
+        b {
+            font-size: 5rem;
+            font-weight: 900;
+            text-shadow: 7px 4px 20px $color-light;
+        }
+        span {
+            font-size: 5rem;
+        }
+    }
+    &__subtitle {
+        position: relative;
+        font-family: $font-header;
+        text-transform: uppercase;
+        color: $color-secondary-2-4;
+        font-weight: 100;
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+        line-height: 1.25;
+        text-align: center;
+        margin: 0 0 86px 0;
+        padding-bottom: 48px;
+    }
+    &__description {
+        display: flex;
+        gap: $gap * 3.5;
+    }
+}

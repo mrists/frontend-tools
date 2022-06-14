@@ -1,0 +1,49 @@
+%section {
+  position: relative;
+
+  overflow: hidden;
+
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+%section-title {
+  margin: 0 0 0.4em;
+
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  font-size: 5rem;
+  font-weight: 300;
+
+  b {
+    padding-left: $gap;
+
+    text-transform: uppercase;
+
+    font-weight: 900;
+  }
+
+  i {
+    font-size: 0.8em;
+    font-style: normal;
+  }
+}
+
+%section-logo {
+  width: 200px;
+}
+
+%section-description {
+  margin: -0.3em 0 0 0;
+
+  font-size: 2rem;
+  line-height: 1.5em;
+}
+
+%section-col-2 {
+  display: flex;
+
+  gap: 70px;
+}

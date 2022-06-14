@@ -1,0 +1,15 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+html {
+    font-family: $font-main;
+    font-size: $font-size;
+}
+
+.container {
+    z-index: 1;
+    max-width: $xl;
+    padding: $gap * 5 $gap;
+}
