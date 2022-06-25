@@ -381,8 +381,9 @@ html {
 .frontend {
   min-height: 100vh;
   background-image: url("../img/fe-logo.png");
-  background-size: cover;
-  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: -10% -10%;
+  background-size: 75%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -393,6 +394,8 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #034052;
+  text-shadow: 5px 5px 10px #ffffff, 0 0 30px #ffffff;
 }
 .frontend__overlay {
   position: absolute;
@@ -406,7 +409,6 @@ html {
 .frontend__title {
   font-family: "Roboto Slab", serif;
   text-transform: uppercase;
-  color: #034052;
   font-size: 4rem;
   font-weight: 300;
   margin: 0 0 0.4em 0;
@@ -416,7 +418,6 @@ html {
 .frontend__title b {
   font-size: 5rem;
   font-weight: 900;
-  text-shadow: 7px 4px 20px #ffffff;
 }
 .frontend__title span {
   font-size: 5rem;
@@ -425,20 +426,25 @@ html {
   position: relative;
   font-family: "Roboto Slab", serif;
   text-transform: uppercase;
-  color: #034052;
-  font-weight: 100;
+  font-weight: 600;
   font-size: 3rem;
   letter-spacing: 0.1em;
   line-height: 1.25;
   text-align: center;
-  margin: 0 0 86px 0;
+  margin: 0 0 160px 0;
   padding-bottom: 48px;
+  -webkit-transform: translateX(130px);
+      -ms-transform: translateX(130px);
+          transform: translateX(130px);
 }
 .frontend__description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 70px;
+  position: absolute;
+  bottom: 80px;
+  font-size: 2rem;
+  line-height: 1.5em;
+  -moz-text-align-last: justify;
+       text-align-last: justify;
+  max-width: 1071px;
 }
 
 .footer {
