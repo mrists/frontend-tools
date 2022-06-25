@@ -1,0 +1,35 @@
+.footer {
+    background-color: $color-secondary-2-4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-light;
+    &__container {
+        padding: 50px 40px;
+    }
+    &__contacts {
+        margin-bottom: $gap;
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            @include unlist;
+        }
+        &-link {
+            display: block;
+            padding: $gap * 0.5;
+            text-decoration: none;
+            color: $color-light;
+            font-size: 2rem;
+            opacity: 0.7;
+            transition: opacity 1s, transform 1s;
+            &:hover {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+    }
+    &__copyright {
+        opacity: 0.7;
+        text-align: center;
+    }
+}

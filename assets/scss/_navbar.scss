@@ -9,6 +9,13 @@
       list-style: none;
       padding: 0;
     }
+    &__item{
+      &.active {
+        a {
+          background-color: $color-primary-3;
+        }
+      }
+    }
     &__link {
       display: block;
       text-align: center;
@@ -19,5 +26,10 @@
       color: $color-light;
       letter-spacing: 0.1em;
       font-size: 1.5rem;
+      transition: opacity 1s, background-color 1s;
+      &:hover {
+        opacity: 1;
+        background-color: rgba($color-secondary-2-1, 0.5);
+      }
     }
   }

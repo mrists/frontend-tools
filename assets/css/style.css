@@ -37,6 +37,9 @@ html {
   list-style: none;
   padding: 0;
 }
+.navbar__item.active a {
+  background-color: #aa2713;
+}
 .navbar__link {
   display: block;
   text-align: center;
@@ -47,6 +50,13 @@ html {
   color: #ffffff;
   letter-spacing: 0.1em;
   font-size: 1.5rem;
+  -webkit-transition: opacity 1s, background-color 1s;
+  -o-transition: opacity 1s, background-color 1s;
+  transition: opacity 1s, background-color 1s;
+}
+.navbar__link:hover {
+  opacity: 1;
+  background-color: rgba(87, 150, 167, 0.5);
 }
 
 .header {
@@ -111,10 +121,6 @@ html {
 .header__title-bold {
   font-weight: 900;
   font-size: 10rem;
-}
-
-body {
-  height: 300vh;
 }
 
 .html {
@@ -433,4 +439,58 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 70px;
+}
+
+.footer {
+  background-color: #034052;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
+}
+.footer__container {
+  padding: 50px 40px;
+}
+.footer__contacts {
+  margin-bottom: 20px;
+}
+.footer__contacts-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer__contacts-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2rem;
+  opacity: 0.7;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  -o-transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 1s, -webkit-transform 1s;
+}
+.footer__contacts-link:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
+}
+.footer__copyright {
+  opacity: 0.7;
+  text-align: center;
 }
