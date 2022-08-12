@@ -13,3 +13,28 @@ html {
     max-width: $xl;
     padding: $gap * 5 $gap;
 }
+body {
+    @media (min-width: 1600px) {
+      .not-responsive {
+        display: none;
+      }
+    }
+    @media (max-width: 1599px) {
+      > * {
+        display: none !important;
+      }
+  
+      .not-responsive {
+        display: flex !important;
+        align-items: center;
+  
+        height: 100vh;
+        padding-right: 100px;
+        padding-left: 100px;
+  
+        color: $color-secondary-2-4;
+  
+        font-size: 4rem;
+      }
+    }
+  }

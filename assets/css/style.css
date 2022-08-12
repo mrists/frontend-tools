@@ -444,7 +444,7 @@ html {
   line-height: 1.5em;
   -moz-text-align-last: justify;
        text-align-last: justify;
-  max-width: 1071px;
+  max-width: 999px;
 }
 
 .footer {
@@ -499,4 +499,27 @@ html {
 .footer__copyright {
   opacity: 0.7;
   text-align: center;
+}
+@media (min-width: 1600px) {
+  body .not-responsive {
+    display: none;
+  }
+}
+@media (max-width: 1599px) {
+  body > * {
+    display: none !important;
+  }
+  body .not-responsive {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+    padding-right: 100px;
+    padding-left: 100px;
+    color: #034052;
+    font-size: 4rem;
+  }
 }
