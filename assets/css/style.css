@@ -37,7 +37,7 @@ html {
   list-style: none;
   padding: 0;
 }
-.navbar__item.active a {
+.navbar__item.active .navbar__link {
   background-color: #aa2713;
 }
 .navbar__link {
