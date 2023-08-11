@@ -1,3 +1,11 @@
+const SECTION_NAMES = {
+	HEADER: '#header',
+	HTML: '#html',
+	CSS: '#css',
+	JAVASCRIPT: '#javascript',
+	FRONTEND: '#frontend'
+}
+
 export default class initNavbar {
 	constructor(params) {
 		const settings = {
@@ -18,7 +26,6 @@ export default class initNavbar {
 	_initProps() {
 		this.screenHeight = window.screen.height;
 		this.prevPosition = null;
-		this.intervalID = null;
 		this.prevSectionPosition = 1;
 	}
 
@@ -37,10 +44,13 @@ export default class initNavbar {
 		if (window.scrollY !== this.prevPosition) {
 			this.screenHeight = window.screen.height;
 			this.sectionPosition = Math.round((window.scrollY + this.screenHeight) / this.screenHeight);
+
 			if (this.sectionPosition !== this.prevSectionPosition) {
 				this.navbarItems[this.sectionPosition - 1].classList.toggle(this.activeClass);
-				if (this.prevItem && this.prevItem !== this.navbarItems[this.sectionPosition - 1])
+
+				if (this.prevItem && this.prevItem !== this.navbarItems[this.sectionPosition - 1]) {
 					this.prevItem.classList.toggle(this.activeClass);
+				}
 				this.prevItem = document.querySelector(`.${this.activeClass}`);
 			}
 
@@ -52,42 +62,46 @@ export default class initNavbar {
 
 	_goToNthSection(e) {
 		e.preventDefault();
-		this.blockID = null;
+		let blockID;
 
 		const sectionNumber = +e.target.getAttribute('data-scroll-to');
 
 		switch (sectionNumber) {
 			case 0:
-				this.blockID = '#header';
+				blockID = SECTION_NAMES.HEADER;
 				break;
 			case 1:
-				this.blockID = '#html';
+				blockID = SECTION_NAMES.HTML;
 				break;
 			case 2:
-				this.blockID = '#css';
+				blockID = SECTION_NAMES.CSS;
 				break;
 			case 3:
-				this.blockID = '#javascript';
+				blockID = SECTION_NAMES.JAVASCRIPT;
 				break;
 			case 4:
-				this.blockID = '#frontend';
+				blockID = SECTION_NAMES.FRONTEND;
 				break;
 		}
 
-		document.body.style.overflow = 'hidden';
+		document.addEventListener('wheel', this._preventScrolling, { passive: false });
 
-		this.scrollTarget = document.querySelector(this.blockID);
+		this.scrollTarget = document.querySelector(blockID);
 		this.scrollTarget.scrollIntoView({
 			behavior: 'smooth',
 			block: 'start',
 		});
 
-		this.intervalID = setInterval(() => this._checkUserPosition(), 100);
-		setTimeout(() => clearInterval(this.intervalID), this.clearIntervalTime);
+		const intervalID = setInterval(() => this._checkUserPosition(), 100);
 
 		setTimeout(() => {
-			document.body.removeAttribute('style');
+			clearInterval(intervalID);
+			document.removeEventListener('wheel', this._preventScrolling);
 		}, this.clearIntervalTime);
+	}
+
+	_preventScrolling(event) {
+		event.preventDefault();
 	}
 
 	init() {
